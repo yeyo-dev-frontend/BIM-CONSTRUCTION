@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+
+  /*
+  --------------------------
+  | COLORES CORPORATIVOS   |
+  --------------------------
+  */
+
+  /*Azul corporativio*/
+  --color-bim-blue: #223c91;
+  
+  /*Naranja corporativo*/
+  --color-bim-orange: #dc6403;
+
+  /*blanco base corporativo*/
+  --color-bim-white: #ffffff;
+
+
+  /* 
+  ===========================
+    TIPOGRAFÍAS CORPORATIVAS
+  =========================== 
+  */
+
+  /*TIPOGRAFIA PARA TEXTOS*/
+  --font-montserrat: 'Montserrat', sans-serif;
+
+  /*TIPOGRAFIA PARA TITULOS O COMUNICACION VISUAL*/
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-impact: 'Impact', sans-serif;
+}
+
+@theme inline {
+  /* colores de BIM disponibles para bg- text- y border- */
+  --color-bim-blue: var(--color-bim-blue);
+  --color-bim-orange: var(--color-bim-orange);
+  --color-bim-white: var(--color-bim-white);
+
+  /* fuentes de BIM disponibles para font- */
+  --font-montserrat: var(--font-montserrat);
+  --font-bebas: var(--font-bebas);
+  --font-impact: var(--font-impact);
+}
+
+body {
+  font-family: var(--font-montserrat);
+  background-color: var(--color-bim-white);
+
+}
