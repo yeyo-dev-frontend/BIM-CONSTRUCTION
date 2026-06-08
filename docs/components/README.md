@@ -1,8 +1,10 @@
 # 📚 Referencia de Componentes
 
-Todos los componentes son átomos del sistema de diseño **Contructora BIM**, ubicados en `src/components/atoms/`. Están construidos con React, Tailwind CSS y `tailwind-merge` para una personalización segura.
+Todos los componentes del sistema de diseño **Contructora BIM** están organizados siguiendo **Atomic Design** en `src/components/`. Los hooks reutilizables viven en `src/hooks/`.
 
 ## Índice rápido
+
+### Átomos (`atoms/`)
 
 | Componente                                | Archivo fuente          | Story en Storybook  | Descripción                                   |
 | ----------------------------------------- | ----------------------- | ------------------- | --------------------------------------------- |
@@ -12,6 +14,31 @@ Todos los componentes son átomos del sistema de diseño **Contructora BIM**, ub
 | [Input](./Input.md)                       | `atoms/inputs.jsx`      | Atoms/Input         | Campo de texto con iconos y estado de error   |
 | [TextArea](./TextArea.md)                 | `atoms/textAreas.jsx`   | —                   | Área de texto multilinea con resize           |
 | [Button](./Button.md)                     | `atoms/buttons.jsx`     | Atoms/Button        | Botón con variantes, tamaños y estado loading |
+| [Icon](./Icon.md)                         | `atoms/icons.jsx`       | —                   | Iconos SVG (Mail, Menu, Close)                |
+
+### Moléculas (`molecules/`)
+
+| Componente                                               | Archivo fuente                     | Descripción                                         |
+| -------------------------------------------------------- | ---------------------------------- | --------------------------------------------------- |
+| [ImageLogo](./Navbar.md#imagelogo-imagelogo-)            | `molecules/navbar/imgLogo.jsx`     | Logo corporativo con `next/image`                   |
+| [TitleCorporation](./Navbar.md#titlecorporation-titlecorporation-) | `molecules/navbar/titleCorporation.jsx` | Nombre corporativo en dos líneas (BIM + CONSTRUCTIONS) |
+| [NavBranding](./Navbar.md#navbranding-navbranding-)      | `molecules/navbar/navBranding.jsx` | Logo + Título como unidad clickeable                |
+| [NavMenu](./Navbar.md#navmenu-navmenu-)                  | `molecules/navbar/navMenu.jsx`     | Lista de enlaces de navegación (horizontal/vertical) |
+| [BtnContactanos](./Navbar.md#btncontactanos-btncontactanos-) | `molecules/navbar/btnContactanos.jsx` | CTA "Contáctanos" con icono de correo            |
+| [MobileMenuToggle](./Navbar.md#mobilemenutoggle-mobilemenutoggle-) | `molecules/navbar/mobileMenuToggle.jsx` | Botón hamburguesa/cerrar para móvil          |
+| [MobileMenuPanel](./Navbar.md#mobilemenupanel-mobilemenupanel-) | `molecules/navbar/mobileMenuPanel.jsx` | Panel desplegable del menú móvil              |
+
+### Organismos (`organisms/`)
+
+| Componente                                  | Archivo fuente          | Descripción                                       |
+| ------------------------------------------- | ----------------------- | ------------------------------------------------- |
+| [Navbar](./Navbar.md#navbar-navbar-)        | `organisms/navbar.jsx`  | Barra de navegación responsive completa            |
+
+### Hooks (`hooks/`)
+
+| Hook                                                             | Archivo fuente              | Descripción                                      |
+| ---------------------------------------------------------------- | --------------------------- | ------------------------------------------------ |
+| [useClickOutside](../hooks/useClickOutside.md)                   | `hooks/useClickOutside.js`  | Detecta clics fuera de un elemento referenciado  |
 
 > 💡 Para explorar los componentes de forma interactiva, ejecuta `pnpm storybook` y abre [http://localhost:6006](http://localhost:6006).
 
@@ -204,5 +231,29 @@ export default function Demo() {
   );
 }
 ```
+
+---
+
+## Icon (`<MailIcon />`, `<MenuIcon />`, `<CloseIcon />`)
+
+**Descripción**: Iconos SVG individuales. Son los átomos visuales más pequeños — no componen otros elementos.
+
+### Iconos disponibles
+
+| Icono       | Tamaño default | Descripción                          |
+| ----------- | -------------- | ------------------------------------ |
+| `MailIcon`  | `w-5 h-5`     | Icono de sobre/correo.               |
+| `MenuIcon`  | `w-6 h-6`     | Icono hamburguesa (3 líneas).        |
+| `CloseIcon` | `w-6 h-6`     | Icono X de cierre.                   |
+
+### Ejemplo
+
+```jsx
+import { MailIcon, MenuIcon, CloseIcon } from '@/components/atoms/icons';
+
+<MailIcon className="w-8 h-8 text-blue-600" />
+```
+
+Para documentación completa de los iconos, ver [Icon.md](./Icon.md).
 
 ---

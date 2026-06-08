@@ -5,6 +5,7 @@ Bienvenido a la documentación oficial del proyecto. Aquí encontrarás guías r
 - **Empezar**: [Guía de inicio rápido](GETTING_STARTED.md)
 - **Estructura**: [Estructura del proyecto](PROJECT_STRUCTURE.md)
 - **Componentes**: [Catálogo de componentes](components/README.md)
+- **Hooks**: [Custom hooks](hooks/useClickOutside.md)
 - **Estilos**: [Guía de estilos y design tokens](STYLING_GUIDE.md)
 - **Desarrollo**: [Directrices de desarrollo](DEVELOPMENT_GUIDELINES.md)
 - **Contribuir**: [Cómo contribuir](CONTRIBUTING.md)

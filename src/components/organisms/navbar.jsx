@@ -1,53 +1,44 @@
-import Link from "next/link";
-import Image from "next/image";
-import Title from "../atoms/titles";
+"use client";
 
-export default function Navbar ({menu}) {
-  const name1 = 'BIM'
-  const name2= 'CONSTRUCTION'
+import { useState, useRef, useCallback } from "react";
+import { useClickOutside } from "@/hooks/useClickOutside";
+import NavBranding from "../molecules/navbar/navBranding";
+import NavMenu from "../molecules/navbar/navMenu";
+import BtnContactanos from "../molecules/navbar/btnContactanos";
+import MobileMenuToggle from "../molecules/navbar/mobileMenuToggle";
+import MobileMenuPanel from "../molecules/navbar/mobileMenuPanel";
 
-  return(
-    <>
-      <nav className=" flex items-center justify-between  px-30 h-[5em] bg-gray-100">
-        <Link href='/' className="flex items-center justify-center">
-        <Image
-          src=''
-          alt="Logo Corporativo"
+export default function Navbar({ menu }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  const closeMenu = useCallback(() => setIsMenuOpen(false), []);
+  useClickOutside(menuRef, closeMenu, isMenuOpen);
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-100">
+      <nav className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+
+        <NavBranding onClick={closeMenu} />
+
+        <NavMenu
+          menu={menu}
+          className="hidden md:flex"
+          orientation="horizontal"
         />
-        <div>
-          <Title
-            level="h2"
-            weight="bold"
-            variant="primary"
-            className="font-bebas"
-            text={name1}
+
+        <div className="flex items-center" ref={menuRef}>
+          <BtnContactanos className="hidden md:block" />
+          <MobileMenuToggle
+            isOpen={isMenuOpen}
+            onToggle={() => setIsMenuOpen(!isMenuOpen)}
           />
-          <Title
-            level="h3"
-            variant="secondary"
-            className="font-bebas"
-            weight="normal"
-            text={name2}
-          />
+          {isMenuOpen && (
+            <MobileMenuPanel menu={menu} onClose={closeMenu} />
+          )}
         </div>
-      </Link>
-      <ul className="flex cursor-pointer
-      ">
-          {
-            menu.map((item) =>{
-              return (
-                <li key={item.id} className="px-10 flex items-center
-                  hover hover:bg-gray-200 duration-300 transition-colors h-[5em]
-                ">
-                  <Link href={item.href} className="font-montserrat">
-                    {item.text}
-                  </Link>
-                </li>
-              )
-            })
-          }
-        </ul>
+
       </nav>
-    </>
-  )
+    </header>
+  );
 }

@@ -79,20 +79,36 @@ Consulta la [Guía de Storybook](docs/STORYBOOK_GUIDE.md) para más detalles.
 ```
 contructora-bim/
 ├── src/
-│   └── components/
-│       └── atoms/          # Componentes atómicos base
-│           ├── buttons.jsx
-│           ├── inputs.jsx
-│           ├── labels.jsx
-│           ├── textAreas.jsx
-│           ├── texts.jsx
-│           └── titles.jsx
-├── stories/                # Historias de Storybook por componente
-├── docs/                   # Documentación del proyecto
-│   ├── components/         # Docs individuales por componente
+│   ├── components/
+│   │   ├── atoms/              # Componentes atómicos base
+│   │   │   ├── buttons.jsx
+│   │   │   ├── icons.jsx
+│   │   │   ├── inputs.jsx
+│   │   │   ├── labels.jsx
+│   │   │   ├── textAreas.jsx
+│   │   │   ├── texts.jsx
+│   │   │   └── titles.jsx
+│   │   ├── molecules/          # Combinaciones de átomos
+│   │   │   └── navbar/
+│   │   │       ├── imgLogo.jsx
+│   │   │       ├── titleCorporation.jsx
+│   │   │       ├── navBranding.jsx
+│   │   │       ├── navMenu.jsx
+│   │   │       ├── btnContactanos.jsx
+│   │   │       ├── mobileMenuToggle.jsx
+│   │   │       └── mobileMenuPanel.jsx
+│   │   ├── organisms/          # Secciones completas de UI
+│   │   │   └── navbar.jsx
+│   │   └── templates/
+│   └── hooks/                  # Custom hooks reutilizables
+│       └── useClickOutside.js
+├── stories/                    # Historias de Storybook
+├── docs/                       # Documentación del proyecto
+│   ├── components/             # Docs por componente
+│   ├── hooks/                  # Docs por hook
 │   └── ...
-├── public/                 # Archivos estáticos
-├── .storybook/             # Configuración de Storybook
+├── public/                     # Archivos estáticos
+├── .storybook/                 # Configuración de Storybook
 └── package.json
 ```
 
@@ -104,6 +120,8 @@ La documentación completa de la estructura está disponible en [docs/PROJECT_ST
 
 Los componentes están documentados individualmente en la carpeta [`docs/components/`](docs/components/README.md). Aquí tienes un resumen rápido:
 
+**Átomos:**
+
 | Componente | Archivo fuente         | Story Storybook | Descripción                                    |
 |------------|------------------------|-----------------|------------------------------------------------|
 | [Title](docs/components/Title.md)       | `atoms/titles.jsx`    | `Atoms/Title`   | Encabezados h1–h6 responsivos y polimórficos   |
@@ -112,6 +130,24 @@ Los componentes están documentados individualmente en la carpeta [`docs/compone
 | [Input](docs/components/Input.md)       | `atoms/inputs.jsx`    | `Atoms/Input`   | Campo de texto con iconos y estado de error    |
 | [TextArea](docs/components/TextArea.md) | `atoms/textAreas.jsx` | —               | Área de texto multilinea con resize            |
 | [Button](docs/components/Button.md)     | `atoms/buttons.jsx`   | `Atoms/Button`  | Botón con variantes, tamaños y estado loading  |
+| [Icon](docs/components/Icon.md)         | `atoms/icons.jsx`     | —               | Iconos SVG (Mail, Menu, Close)                 |
+
+**Moléculas y Organismos:**
+
+| Componente | Archivo fuente                     | Descripción                                      |
+|------------|------------------------------------|--------------------------------------------------|
+| [Navbar](docs/components/Navbar.md) | `organisms/navbar.jsx`       | Barra de navegación responsive completa          |
+| NavBranding  | `molecules/navbar/navBranding.jsx`  | Logo + Título como unidad clickeable           |
+| NavMenu      | `molecules/navbar/navMenu.jsx`      | Lista de enlaces (horizontal/vertical)         |
+| BtnContactanos | `molecules/navbar/btnContactanos.jsx` | CTA "Contáctanos" con icono              |
+| MobileMenuToggle | `molecules/navbar/mobileMenuToggle.jsx` | Botón hamburguesa/cerrar             |
+| MobileMenuPanel  | `molecules/navbar/mobileMenuPanel.jsx`  | Panel desplegable móvil              |
+
+**Hooks:**
+
+| Hook | Archivo fuente | Descripción |
+|------|----------------|-------------|
+| [useClickOutside](docs/hooks/useClickOutside.md) | `hooks/useClickOutside.js` | Detecta clics fuera de un elemento |
 
 ---
 

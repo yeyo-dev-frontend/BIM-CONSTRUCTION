@@ -5,28 +5,54 @@ Esta página describe la arquitectura de carpetas y archivos clave de **Contruct
 ```mermaid
 graph TD;
     src[src] --> components[components];
-    src --> pages[pages];
-    src --> lib[lib];
+    src --> app[app];
+    src --> hooks[hooks];
+    src --> statics[statics];
+
     components --> atoms[atoms];
     components --> molecules[molecules];
     components --> organisms[organisms];
-    pages --> index[[index.tsx]];
-    pages --> ...[other pages];
-    lib --> utils[[utils.ts]];
+    components --> templates[templates];
+
+    atoms --> buttons[[buttons.jsx]];
+    atoms --> icons[[icons.jsx]];
+    atoms --> inputs[[inputs.jsx]];
+    atoms --> labels[[labels.jsx]];
+    atoms --> texts[[texts.jsx]];
+    atoms --> titles[[titles.jsx]];
+    atoms --> textAreas[[textAreas.jsx]];
+
+    molecules --> navbarMol[navbar/];
+    navbarMol --> imgLogo[[imgLogo.jsx]];
+    navbarMol --> titleCorporation[[titleCorporation.jsx]];
+    navbarMol --> navBranding[[navBranding.jsx]];
+    navbarMol --> navMenu[[navMenu.jsx]];
+    navbarMol --> btnContactanos[[btnContactanos.jsx]];
+    navbarMol --> mobileMenuToggle[[mobileMenuToggle.jsx]];
+    navbarMol --> mobileMenuPanel[[mobileMenuPanel.jsx]];
+
+    organisms --> navbar[[navbar.jsx]];
+
+    hooks --> useClickOutside[[useClickOutside.js]];
+
     public --> assets[[static assets]];
 ```
 
 - **src/** – Código fuente de la aplicación.
   - **components/** – Implementación de componentes siguiendo Atomic Design.
-    - **atoms/** – Componentes básicos (Title, Text, Button, etc.).
-    - **molecules/** – Combinaciones de átomos (por ejemplo, `FormField`).
-    - **organisms/** – Secciones completas de UI (por ejemplo, `Header`).
-  - **pages/** – Rutas de Next.js.
-  - **lib/** – Funciones utilitarias y lógica de negocio.
+    - **atoms/** – Componentes básicos e indivisibles (Title, Text, Button, Icon, Input, Label, TextArea).
+    - **molecules/** – Combinaciones de átomos que forman unidades funcionales (NavBranding, NavMenu, BtnContactanos, MobileMenuToggle, MobileMenuPanel).
+    - **organisms/** – Secciones completas de UI que componen múltiples moléculas (Navbar).
+    - **templates/** – Layouts de página reutilizables.
+  - **hooks/** – Custom hooks de React reutilizables (useClickOutside).
+  - **app/** – Rutas y páginas de Next.js (App Router).
+  - **statics/** – Datos estáticos y constantes.
 - **public/** – Recursos estáticos (imágenes, fuentes).
-- **styles/** – Configuración de Tailwind y archivos CSS globales.
-- **.storybook/** – Configuración de Storybook (ver sección *Storybook*).
+- **stories/** – Historias de Storybook por componente.
+- **.storybook/** – Configuración de Storybook.
 - **docs/** – Toda la documentación del proyecto (este directorio).
+  - **components/** – Docs individuales por componente y por organismo.
+  - **hooks/** – Docs individuales por hook.
 
 ---
 > **Tip:** Mantén actualizada esta página cuando añadas o reorganices carpetas.
