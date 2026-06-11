@@ -89,16 +89,20 @@ contructora-bim/
 │   │   │   ├── texts.jsx
 │   │   │   └── titles.jsx
 │   │   ├── molecules/          # Combinaciones de átomos
-│   │   │   └── navbar/
-│   │   │       ├── imgLogo.jsx
-│   │   │       ├── titleCorporation.jsx
-│   │   │       ├── navBranding.jsx
-│   │   │       ├── navMenu.jsx
-│   │   │       ├── btnContactanos.jsx
-│   │   │       ├── mobileMenuToggle.jsx
-│   │   │       └── mobileMenuPanel.jsx
+│   │   │   ├── navbar/
+│   │   │   │   ├── imgLogo.jsx
+│   │   │   │   ├── titleCorporation.jsx
+│   │   │   │   ├── navBranding.jsx
+│   │   │   │   ├── navMenu.jsx
+│   │   │   │   ├── btnContactanos.jsx
+│   │   │   │   ├── mobileMenuToggle.jsx
+│   │   │   │   └── mobileMenuPanel.jsx
+│   │   │   └── hero/
+│   │   │       ├── heroPresentation.jsx
+│   │   │       └── btnsAction.jsx
 │   │   ├── organisms/          # Secciones completas de UI
-│   │   │   └── navbar.jsx
+│   │   │   ├── navbar.jsx
+│   │   │   └── hero.jsx
 │   │   └── templates/
 │   └── hooks/                  # Custom hooks reutilizables
 │       └── useClickOutside.js
@@ -142,6 +146,9 @@ Los componentes están documentados individualmente en la carpeta [`docs/compone
 | BtnContactanos | `molecules/navbar/btnContactanos.jsx` | CTA "Contáctanos" con icono              |
 | MobileMenuToggle | `molecules/navbar/mobileMenuToggle.jsx` | Botón hamburguesa/cerrar             |
 | MobileMenuPanel  | `molecules/navbar/mobileMenuPanel.jsx`  | Panel desplegable móvil              |
+| [Hero](docs/components/Hero.md) | `organisms/hero.jsx`             | Sección hero/banner principal con imagen de fondo |
+| HeroPresentation | `molecules/hero/heroPresentation.jsx` | Título h1 + descripción + botones de acción |
+| BtnAction        | `molecules/hero/btnsAction.jsx`       | Botones CTA: "Cotizar Proyecto" y "Nuestros Proyectos" |
 
 **Hooks:**
 

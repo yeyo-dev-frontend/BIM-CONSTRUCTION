@@ -31,7 +31,12 @@ graph TD;
     navbarMol --> mobileMenuToggle[[mobileMenuToggle.jsx]];
     navbarMol --> mobileMenuPanel[[mobileMenuPanel.jsx]];
 
+    molecules --> heroMol[hero/];
+    heroMol --> heroPresentation[[heroPresentation.jsx]];
+    heroMol --> btnsAction[[btnsAction.jsx]];
+
     organisms --> navbar[[navbar.jsx]];
+    organisms --> heroOrg[[hero.jsx]];
 
     hooks --> useClickOutside[[useClickOutside.js]];
 
@@ -41,8 +46,10 @@ graph TD;
 - **src/** – Código fuente de la aplicación.
   - **components/** – Implementación de componentes siguiendo Atomic Design.
     - **atoms/** – Componentes básicos e indivisibles (Title, Text, Button, Icon, Input, Label, TextArea).
-    - **molecules/** – Combinaciones de átomos que forman unidades funcionales (NavBranding, NavMenu, BtnContactanos, MobileMenuToggle, MobileMenuPanel).
-    - **organisms/** – Secciones completas de UI que componen múltiples moléculas (Navbar).
+    - **molecules/** – Combinaciones de átomos que forman unidades funcionales.
+      - **navbar/** – NavBranding, NavMenu, BtnContactanos, MobileMenuToggle, MobileMenuPanel.
+      - **hero/** – HeroPresentation, BtnAction.
+    - **organisms/** – Secciones completas de UI que componen múltiples moléculas (Navbar, Hero).
     - **templates/** – Layouts de página reutilizables.
   - **hooks/** – Custom hooks de React reutilizables (useClickOutside).
   - **app/** – Rutas y páginas de Next.js (App Router).

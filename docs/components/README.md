@@ -18,6 +18,8 @@ Todos los componentes del sistema de diseño **Contructora BIM** están organiza
 
 ### Moléculas (`molecules/`)
 
+**Navbar:**
+
 | Componente                                               | Archivo fuente                     | Descripción                                         |
 | -------------------------------------------------------- | ---------------------------------- | --------------------------------------------------- |
 | [ImageLogo](./Navbar.md#imagelogo-imagelogo-)            | `molecules/navbar/imgLogo.jsx`     | Logo corporativo con `next/image`                   |
@@ -28,11 +30,19 @@ Todos los componentes del sistema de diseño **Contructora BIM** están organiza
 | [MobileMenuToggle](./Navbar.md#mobilemenutoggle-mobilemenutoggle-) | `molecules/navbar/mobileMenuToggle.jsx` | Botón hamburguesa/cerrar para móvil          |
 | [MobileMenuPanel](./Navbar.md#mobilemenupanel-mobilemenupanel-) | `molecules/navbar/mobileMenuPanel.jsx` | Panel desplegable del menú móvil              |
 
+**Hero:**
+
+| Componente                                                           | Archivo fuente                        | Descripción                                           |
+| -------------------------------------------------------------------- | ------------------------------------- | ----------------------------------------------------- |
+| [HeroPresentation](./Hero.md#heropresentation-heropresentation-)     | `molecules/hero/heroPresentation.jsx` | Título h1 + descripción + botones de acción           |
+| [BtnAction](./Hero.md#btnaction-btnaction-)                          | `molecules/hero/btnsAction.jsx`       | Botones CTA: "Cotizar Proyecto" y "Nuestros Proyectos" |
+
 ### Organismos (`organisms/`)
 
 | Componente                                  | Archivo fuente          | Descripción                                       |
 | ------------------------------------------- | ----------------------- | ------------------------------------------------- |
 | [Navbar](./Navbar.md#navbar-navbar-)        | `organisms/navbar.jsx`  | Barra de navegación responsive completa            |
+| [Hero](./Hero.md#hero-hero-)               | `organisms/hero.jsx`    | Sección hero/banner principal con fondo e imagen   |
 
 ### Hooks (`hooks/`)
 
