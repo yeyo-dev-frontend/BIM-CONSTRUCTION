@@ -12,7 +12,7 @@ export const Menu = [
   {
     id : 3,
     text : 'Servicios',
-    href : '/servicess',
+    href : '/ourServices',
   },
   {
     id : 4,
