@@ -24,11 +24,11 @@ pnpm install
 
 ## 4. Lint y formato
 
-```bash
+```bashs
 pnpm lint -- --fix
 ```
 
-## 5. Pruebas
+## 5. Prueba
 
 Ejecuta la suite de pruebas y asegura que no haya fallos:
 
